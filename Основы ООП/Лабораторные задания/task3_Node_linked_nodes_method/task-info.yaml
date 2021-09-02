@@ -4,16 +4,16 @@ files:
   visible: true
   placeholders:
   - offset: 1025
-    length: 31
+    length: 95
     placeholder_text: '...  # TODO реализовать функцию'
     initial_state:
       length: 31
       offset: 1025
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: left_node.set_next(right_node)
-  - offset: 1090
+  - offset: 1154
     length: 76
     placeholder_text: '...  # TODO самостоятельно проверьте работоспособность  функции
       linked_nodes'

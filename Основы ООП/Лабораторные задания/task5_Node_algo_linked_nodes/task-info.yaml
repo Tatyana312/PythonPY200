@@ -14,14 +14,14 @@ files:
     status: Unchecked
     encrypted_possible_answer: return str(self.value)
   - offset: 1326
-    length: 68
+    length: 106
     placeholder_text: '# TODO реализуйте алгоритм, который свяжет между собой узлы
       в списке'
     initial_state:
       length: 68
       offset: 1326
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: |-
       for i in range(len(list_nodes) - 1):

@@ -34,7 +34,7 @@ def linked_nodes(left_node: Node, right_node: Optional["Node"] = None) -> None:
     :param left_node: Левый или предыдущий узел
     :param right_node: Правый или следующий узел
     """
-    ...  # TODO реализовать функцию
+    ...  # TODO реализовать функцию, принять левый узел два узла левый и правый связать между собой
 
 
 if __name__ == '__main__':
