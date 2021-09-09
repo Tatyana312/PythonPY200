@@ -69,7 +69,11 @@ class LinkedList:
         ...  # TODO проверка индекса
 
         ...  # TODO алгоритм удаления
-
+        # prev.next.next
+        #prev.nex=node
+        #prev.index  - prev.index+2
+        #если первый элемент -head - next index = 0
+        # если последний, у предпоследнего next -none index last = 0
     def to_list(self) -> list:
         return [linked_list_value for linked_list_value in self]
 

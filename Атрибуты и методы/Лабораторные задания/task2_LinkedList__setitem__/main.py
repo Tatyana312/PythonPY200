@@ -56,11 +56,18 @@ class LinkedList:
         return current_node
 
     def __getitem__(self, index: int) -> Any:
-        """ Метод возвращает значение узла по указанному индексу. """
+        """ Метод возвращает значение узла по указанному индексу. доходим до нжного узла и возвращаем новое значение"""
         node = self.step_by_step_on_nodes(index)
         return node.value
 
-    # TODO реализовать магический метод __setitem__
+    # TODO реализовать магический метод __setitem__ не должен возвращать ничего
+    def __setitem__(self, index: int, value: Any) -> None:
+        node = self.step_by_step_on_nodes(index)
+
+        node.value = value
+
+
+
 
     def to_list(self) -> list:
         return [linked_list_value for linked_list_value in self]
@@ -79,4 +86,6 @@ if __name__ == '__main__':
 
     print(linked_list[1])
     # TODO установить элементу с индексом 1 значение 100
+    linked_list[1] = 100
+
     print(linked_list[1])

@@ -47,7 +47,7 @@ class LinkedList:
 
         # TODO проверка корректности границ индекса
         if not 0 <= index <= self.len-1: # < self.len
-            raise TypeError()
+            raise IndexError()
 
         current_node = self.head
         for _ in range(index):

@@ -63,5 +63,5 @@ if __name__ == "__main__":
     list_ = [1, 2, 3]
     linked_list = LinkedList(list_)
 
-    output = sorted(linked_list, reverse=True)
+    output = sorted(linked_list, reverse=True) #возвращает питоновский лист
     print(output)

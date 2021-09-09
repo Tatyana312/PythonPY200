@@ -10,7 +10,7 @@ files:
       length: 28
       offset: 1992
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: |-
       if not isinstance(index, int):
@@ -19,13 +19,13 @@ files:
               if not 0 <= index < self.len:  # для for
                   raise IndexError()
   - offset: 2030
-    length: 29
+    length: 234
     placeholder_text: '...  # TODO алгоритм удаления'
     initial_state:
       length: 29
       offset: 2030
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: |-
       if index == 0:
