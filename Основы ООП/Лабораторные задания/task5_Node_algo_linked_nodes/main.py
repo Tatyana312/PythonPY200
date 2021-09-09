@@ -19,7 +19,9 @@ class Node:
         return f"Node({self.value}, {None})" if self.next is None else f"Node({self.value}, Node({self.next}))"
 
     def __str__(self) -> str:
-        ...  # TODO метод должен возвращать значение текущего узла
+        ...  #
+        return str(self.value)
+        # TODO метод должен возвращать значение текущего узла
 
     def is_valid(self, node: Any) -> None:
         if not isinstance(node, (type(None), Node)):
@@ -44,6 +46,8 @@ if __name__ == "__main__":
     list_nodes = [Node(value) for value in range(10)]
     print(list_nodes)
 
-    # TODO реализуйте алгоритм, который свяжет между собой узлы в списке пройтись циклом for и попарно связать
+
+    # TODO
+    # реализуйте алгоритм, который свяжет между собой узлы в списке пройтись циклом for и попарно связать
 
     print(list_nodes)

@@ -34,8 +34,19 @@ def linked_nodes(left_node: Node, right_node: Optional["Node"] = None) -> None:
     :param left_node: Левый или предыдущий узел
     :param right_node: Правый или следующий узел
     """
-    ...  # TODO реализовать функцию, принять левый узел два узла левый и правый связать между собой
+    # self.left_node = left_node
+    # self.right_node = right_node
+    # return self.linked_nodes = (left_node,right_node)
+    left_node.set_next(right_node)
+    # TODO реализовать функцию, принять левый узел два узла левый и правый связать между собой
 
 
 if __name__ == '__main__':
-    ...  # TODO самостоятельно проверьте работоспособность  функции linked_nodes
+    ...  #
+    node_1=Node(1)
+    node_2 = Node(2)
+    Node.set_next(node_1, node_2)
+
+    print(node_1)
+
+    # TODO самостоятельно проверьте работоспособность  функции linked_nodes
