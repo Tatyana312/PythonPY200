@@ -17,7 +17,7 @@ class LinkedList:
         for i in range(0, len(self.list_nodes)-1): # последнй элемент несчем сравнивать
             left_node = self.list_nodes[i]
             right_node = self.list_nodes[i+1]
-            self.list_nodes(left_node,right_node)
+            self.list_nodes(left_node, right_node)
 
     # TODO каким должен быть этот метод? - декоратор метод к атрибутам класса или методам класа. Зависит от внутреннего предсиавоения (списка) -нет self cls - не зависит
     @staticmethod

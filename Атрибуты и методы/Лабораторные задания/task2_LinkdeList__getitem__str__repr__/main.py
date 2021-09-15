@@ -47,7 +47,7 @@ class LinkedList:
             raise TypeError()
 
         if not 0 <= index < self.len:  # для for
-            raise IndexError  # TODO подставьте нужную ошибку
+            raise IndexError()  # TODO подставьте нужную) ошибку
 
         current_node = self.head
         for _ in range(index):

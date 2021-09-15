@@ -4,57 +4,57 @@ files:
   visible: true
   placeholders:
   - offset: 1391
-    length: 43
+    length: 39
     placeholder_text: '...  # TODO подставьте нужную ошибку'
     initial_state:
       length: 36
       offset: 1391
     initialized_from_dependency: false
     selected: true
-    status: Unchecked
+    status: Failed
     encrypted_possible_answer: IndexError()
-  - offset: 1699
-    length: 81
+  - offset: 1695
+    length: 6
     placeholder_text: '# TODO'
     initial_state:
       length: 6
       offset: 1692
     initialized_from_dependency: false
-    selected: true
-    status: Unchecked
+    selected: false
+    status: Failed
     encrypted_possible_answer: |-
       node = self.step_by_step_on_nodes(index)
               return node.value
-  - offset: 1821
-    length: 128
+  - offset: 1742
+    length: 63
     placeholder_text: '...  # TODO Метод to_list реализовать через list comprehension.'
     initial_state:
       length: 63
       offset: 1739
     initialized_from_dependency: false
-    selected: true
-    status: Unchecked
+    selected: false
+    status: Failed
     encrypted_possible_answer: return [linked_list_value for linked_list_value in
       self]
-  - offset: 1990
-    length: 62
+  - offset: 1846
+    length: 61
     placeholder_text: '...  # TODO c помощью метода to_list реализовать данный метод'
     initial_state:
       length: 61
       offset: 1843
     initialized_from_dependency: false
-    selected: true
-    status: Unchecked
+    selected: false
+    status: Failed
     encrypted_possible_answer: return f"{self.__class__.__name__}({self.to_list()})"
-  - offset: 2092
-    length: 106
+  - offset: 1947
+    length: 61
     placeholder_text: '...  # TODO c помощью метода to_list реализовать данный метод'
     initial_state:
       length: 61
       offset: 1944
     initialized_from_dependency: false
-    selected: true
-    status: Unchecked
+    selected: false
+    status: Failed
     encrypted_possible_answer: return f"{self.to_list()}"
   text: |
     from typing import Iterable, Optional, Any
@@ -178,5 +178,13 @@ files:
             self.is_valid(next_)
             self.next = next_
   learner_created: false
-status: Unchecked
+status: Failed
+feedback:
+  message: Incorrect
+  time: Mon, 13 Sep 2021 21:44:01 UTC
+  expected: |
+    [1, 2, 3]
+    LinkedList([1, 2, 3])
+  actual: |
+    [1, 2, 3]
 record: -1

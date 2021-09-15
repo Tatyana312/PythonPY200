@@ -3,22 +3,22 @@ files:
 - name: main.py
   visible: true
   placeholders:
-  - offset: 469
-    length: 273
+  - offset: 836
+    length: 46
     placeholder_text: '# TODO составьте алгоритм, который свяжет узлы'
     initial_state:
       length: 46
       offset: 470
     initialized_from_dependency: false
-    selected: true
-    status: Unchecked
+    selected: false
+    status: Failed
     encrypted_possible_answer: |-
       for i in range(len(self.list_nodes) - 1):
                   current_node = self.list_nodes[i]
                   next_node = self.list_nodes[i + 1]
                   self.linked_nodes(current_node, next_node)
-  - offset: 748
-    length: 265
+  - offset: 888
+    length: 124
     placeholder_text: |-
       # TODO каким должен быть этот метод?
           def linked_nodes(self, left_node: Node, right_node: Optional[Node] = None) -> None:
@@ -27,7 +27,7 @@ files:
       offset: 522
     initialized_from_dependency: false
     selected: true
-    status: Unchecked
+    status: Failed
     encrypted_possible_answer: |-
       @staticmethod
           def linked_nodes(left_node: Node, right_node: Optional[Node] = None) -> None:
@@ -111,10 +111,11 @@ files:
             self.is_valid(next_)
             self.next = next_
   learner_created: false
-status: Unchecked
+status: Failed
 feedback:
-  message: |-
-    No Python interpreter
-    For more information, see <a href="https://plugins.jetbrains.com/plugin/10081-edutools/docs/troubleshooting-guide.html#no_tests_have_run">the Troubleshooting guide</a>
-  time: Thu, 09 Sep 2021 15:52:38 UTC
+  message: Incorrect
+  time: Mon, 13 Sep 2021 20:40:12 UTC
+  expected: |
+    [Node(1, Node(2)), Node(2, Node(3)), Node(3, None)]
+  actual: <no output>
 record: -1

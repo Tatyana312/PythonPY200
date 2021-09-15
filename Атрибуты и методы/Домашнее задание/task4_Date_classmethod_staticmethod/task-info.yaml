@@ -4,33 +4,33 @@ files:
   visible: true
   placeholders:
   - offset: 555
-    length: 11
+    length: 233
     placeholder_text: '...  # TODO'
     initial_state:
       length: 11
       offset: 555
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Solved
     encrypted_possible_answer: '...'
-  - offset: 709
-    length: 11
+  - offset: 998
+    length: 129
     placeholder_text: '...  # TODO'
     initial_state:
       length: 11
       offset: 709
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Solved
     encrypted_possible_answer: '...'
-  - offset: 845
-    length: 11
+  - offset: 1252
+    length: 180
     placeholder_text: '...  # TODO'
     initial_state:
       length: 11
       offset: 845
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Solved
     encrypted_possible_answer: '...'
   text: |

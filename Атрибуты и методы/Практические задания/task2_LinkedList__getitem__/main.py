@@ -43,12 +43,9 @@ class LinkedList:
         # TODO проверка правильности типа индекса только целочисленные индексы
         if not isinstance(index, int):
             raise TypeError
-
-
         current_node = self.head  # TODO чему равен начальный элемент?
         for _ in range(index):
             current_node = current_node.next
-
         return current_node
 
     def __getitem__(self, index: int) -> Any:

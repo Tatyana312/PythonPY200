@@ -16,15 +16,29 @@ class Date:
 
     def is_leap_year(self, year: int):
         """Проверяет, является ли год високосным"""
-        ...  # TODO
+        if ((self.year % 4 == 0) and (self.year % 100 != 0)) or ((self.year % 400 == 0) and (self.year % 100 == 0)):
+            print("Год {self.year} - високосный")
+        else: print("Год {self.year} - не високосный")
+        return True
+
 
     def get_max_day(self, month: int, year: int):
         """Возвращает максимальное количество дней в месяце для указанного года"""
-        ...  # TODO
+        index = self.month-1
+        if  is_leap_year(self.year) == True:
+            self.max_day = DAY_OF_MONTH[1][index]
+        else: self.max_day = DAY_OF_MONTH[0][index]
+        return self.max_day
 
     def is_valid_date(self, day: int, month: int, year: int):
         """Проверяет, является ли дата корректной"""
-        ...  # TODO
+        if 12 < self.month < 1:
+            raise TimeoutError
+        if 9999 < self.year < 1:
+            raise TimeoutError
+        if 31 < self.day < 1:
+            raise TimeoutError
+
 
 
 if __name__ == "__main__":
