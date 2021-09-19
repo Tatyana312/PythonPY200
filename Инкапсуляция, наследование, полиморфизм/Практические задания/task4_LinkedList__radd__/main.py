@@ -70,7 +70,7 @@ class LinkedList:
         return f"{self.to_list()}"
 
     def __add__(self, other: "LinkedList") -> "LinkedList":  # TODO метод должен уметь складывать list
-        if not isinstance(other, LinkedList):
+        if not isinstance(other, (LinkedList, list)):
             raise TypeError
 
         for item in other:
@@ -79,9 +79,22 @@ class LinkedList:
         return self
 
     # TODO определить метод сложения, когда LinkedList находится справа от оператора сложения
+    def __iadd__(self, other: ["LinkedList", list]):
+        return self + other
+
+    def __radd__(self, other):
+        l = LinkedList(other)
+
+        for value in self:
+            l.append(value)
+
+        return l
+
+
 
 
 if __name__ == "__main__":
+
     ll = LinkedList()
     print(ll)
 

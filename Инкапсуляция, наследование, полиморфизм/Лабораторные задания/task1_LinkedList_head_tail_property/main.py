@@ -10,6 +10,7 @@ class LinkedList:
         self.head: Optional[Node] = None
         self.tail = self.head
 
+
         if data is not None:
             for value in data:
                 self.append(value)
@@ -71,7 +72,30 @@ class LinkedList:
 
     # TODO реализовать getter и setter для head
 
+    def is_valid(self, node: Any) -> None:
+        if not isinstance(node, (type(None), Node)):
+            raise TypeError
+
+    @property
+    def head(self):
+        return self.__head
+
+    @head.setter
+    def head(self, head_: Optional["Node"] = None) -> None:
+        # print("Вызван setter1")
+        self.is_valid(head_)
+        self.__head = head_
+
     # TODO реализовать getter и setter для tail
+    @property
+    def tail(self):
+        return self.__tail
+
+    @tail.setter
+    def tail(self, tail_: Optional["Node"] = None) -> None:
+        # print("Вызван setter2")
+        self.is_valid(tail_)
+        self.__tail = tail_
 
 
 if __name__ == "__main__":
