@@ -2,6 +2,7 @@ from collections.abc import MutableSequence
 
 from node import Node, DoubleLinkedNode
 
+
 class LinkedList(MutableSequence):
 
     def __init__(self, data: Iterable = None):
@@ -28,6 +29,7 @@ class LinkedList(MutableSequence):
 
         return current_node
 
+    @staticmethod
     def linked_nodes(left_node: Node, right_node: Optional[Node] = None) -> None:
         """
         Функция, которая связывает между собой два узла.
@@ -112,27 +114,23 @@ class LinkedList(MutableSequence):
     @head.setter
     def head(self, head: Optional["self.__class__"]):
         # print("Вызван setter1")
-        self.is_valid(head)
+        Node.is_valid(head)
         self.__head = head
 
     @property
     def tail(self):
         return self.__tail
 
-    @property
-    def tail(self):
-        return self.tail
-
     @tail.setter
     def tail(self, tail: Optional["self.__class__"]):
         self.is_valid(tail)
-        self.tail = tail
+        self.__tail = tail
 
 class DoubleLinkedList(LinkedList):
 
     def __init__(self, data: Iterable = None):
         """Конструктор двусвязного списка"""
-        super().__init__(len)
+        super().__init__(data)
 
         if data is not None:
             for value in data:
@@ -145,7 +143,7 @@ class DoubleLinkedList(LinkedList):
         if self.head is None:
             self.head = self.tail = append_node
         else:
-            self.double_linked_nodes(self.tail, append_node, self.tail.prev)
+            self.linked_nodes(self.tail, append_node, self.tail.prev)
             self.tail = append_node
             self.tail.next.prev = append_node
 
@@ -167,7 +165,7 @@ class DoubleLinkedList(LinkedList):
         return current_node
 
     @staticmethod
-    def double_linked_nodes(left_node: Optional[DoubleLinkedNode] = None, right_node: Optional[DoubleLinkedNode] = None) -> None:
+    def linked_nodes(left_node: Node, right_node: Optional[Node] = None) -> None:(left_node: Optional[DoubleLinkedNode] = None, right_node: Optional[DoubleLinkedNode] = None) -> None:
         """
         Функция, которая связывает между собой два узла.
         :param left_node: Левый или предыдущий узел
@@ -175,8 +173,7 @@ class DoubleLinkedList(LinkedList):
         """
         left_node.next = right_node
         right_node.prev = left_node
-        right_node.next.prev = right_node
-        left_node.next.prev = left_node
+
 
     def to_list(self) -> list:
         return [double_linked_list_value for double_linked_list_value in self]
