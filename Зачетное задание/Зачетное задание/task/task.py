@@ -1,6 +1,6 @@
 from collections.abc import MutableSequence
 
-from node import Node
+from node import Node, DoubleLinkedNode
 
 class LinkedList(MutableSequence):
 
@@ -138,7 +138,7 @@ class DoubleLinkedList(LinkedList):
             for value in data:
                 self.append(value)
 
-    def double_append(self, value: Any):
+    def append(self, value: Any):
         """ Добавление элемента в конец связного списка. """
         append_node = DoubleLinkedNode(value)
 
@@ -158,11 +158,9 @@ class DoubleLinkedList(LinkedList):
 
         if not 0 <= index < self.len:  # для for
             raise IndexError()
-
         current_node = self.tail
         for _ in range(index):
             current_node = current_node.prev
-
         for _ in reversed(self.len):
             current_node = current_node.prev
 
@@ -172,11 +170,9 @@ class DoubleLinkedList(LinkedList):
     def double_linked_nodes(left_node: Optional[DoubleLinkedNode] = None, right_node: Optional[DoubleLinkedNode] = None) -> None:
         """
         Функция, которая связывает между собой два узла.
-
         :param left_node: Левый или предыдущий узел
         :param right_node: Правый или следующий узел
         """
-
         left_node.next = right_node
         right_node.prev = left_node
         right_node.next.prev = right_node
@@ -191,54 +187,28 @@ class DoubleLinkedList(LinkedList):
     def __str__(self) -> str:
         return f"{self.to_list()}"
 
-    def insert(self, index: int, value: Any):
+    def insert(self, index: int, value: Any) -> None:
+        if not isinstance(index, int):
+            raise TypeError()
+        insert_node = Node(value)
 
-        new_node = Node(data=new_data)
+        if index == 0:
+            insert_node.next = self.head
+            self.head = insert_node
+            insert_node.prev = None
+            self.len += 1
 
-        new_node.next = self.head
-        new_node.prev = None
+        elif index >= self.len - 1:
+            self.append(value)
 
-        if self.head is not None:
-            self.head.prev = new_node
+        else:
+            prev_node = self.step_by_step_on_nodes(index - 1)
+            next_node = prev_node.next
+            next_node.prev = prev_node
 
-        self.head = new_node
-
-        if prev_node is None:
-            print("This node doesn't exist in DLL")
-            return
-
-        new_node = Node(data=new_data)
-
-
-        new_node.next = prev_node.next
-
-
-        prev_node.next = new_node
-
-        new_node.prev = prev_node
-
-        if new_node.next is not None:
-            new_node.next.prev = new_node
-
-        new_node = Node(data=new_data)
-        last = self.head
-
-        # 3. This new node is going to be the
-        # last node, so make next of it as NULL
-        new_node.next = None
-
-        if self.head is None:
-            new_node.prev = None
-            self.head = new_node
-            return
-
-
-        while (last.next is not None):
-            last = last.next
-
-        last.next = new_node
-
-        new_node.prev = last
+            self.double_linked_nodes(prev_node, insert_node)
+            self.double_linked_nodes(insert_node, next_node)
+            self.len += 1
 
     def __delitem__(self, index: int):
         if not isinstance(index, int):
@@ -247,46 +217,21 @@ class DoubleLinkedList(LinkedList):
             raise IndexError()
         if index == 0:
             self.head = self.head.next
+            self.head.prev = None
+
         elif index == self.len - 1:
             tail = self.step_by_step_on_nodes(index - 1)
             tail.next = None
+            tail.prev.next = tail.prev
+
         else:
             prev_node = self.step_by_step_on_nodes(index - 1)
             del_node = prev_node.next
             next_node = del_node.next
-            self.linked_nodes(prev_node, next_node)
+            next_node.prev = prev_node
+
+            self.double_linked_nodes(prev_node, next_node)
         self.len -= 1
-
-    def __delitem__(self, index: int):
-        if not isinstance(index, int):
-            raise TypeError()
-        if not 0 <= index < self.len:
-            raise IndexError()
-
-        if index == 0:
-            self.head = self.head.next
-
-        elif index == self.len - 1:
-            tail = self.step_by_step_on_nodes(index - 1)
-            tail.next = None
-
-        else:
-            self.tail.prev = self.step_by_step_on_nodes(index - 1)
-            del_node = tail.prev.next = tail.next
-            next_node = del_node.next
-            self.linked_nodes(prev_node, next_node)
-        self.len -= 1
-
-
-
-        if dele.next is not None:
-            dele.next.prev = dele.prev
-
-
-        if dele.prev is not None:
-            dele.prev.next = dele.next
-
-        gc.collect()
 
 if __name__ == "__main__":
     ...
