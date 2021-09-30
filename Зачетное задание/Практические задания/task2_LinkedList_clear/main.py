@@ -76,7 +76,12 @@ class LinkedList:
             current_node = current_node.next
 
     def clear(self):
-        ...  # TODO реализовать очистку списка
+        # TODO реализовать очистку списка
+        self.head = None
+        self.tail = None
+        self.len = 0
+    def __del__(self):
+        print()
 
 
 if __name__ == '__main__':

@@ -2,7 +2,6 @@ from typing import Iterable, Optional, Any
 
 from node import Node
 
-
 class LinkedList:
     def __init__(self, data: Iterable = None):
         """Конструктор связного списка"""
@@ -96,7 +95,22 @@ class LinkedList:
         return f"{self.to_list()}"
 
     def insert(self, index: int, value: Any) -> None:
-        ...  # TODO реализовать алгоритм вставки элемента - зачет
+        # TODO реализовать алгоритм вставки элемент
+        if not isinstance(index, int):
+            raise TypeError()
+        insert_node = Node(value)
+        if index == 0:
+            insert_node.next = self.head
+            self.head = insert_node
+            self.len += 1
+        elif index >= self.len - 1:
+            self.append(value)
+        else:
+            prev_node = self.step_by_step_on_nodes(index - 1)
+            next_node = prev_node.next
+            self.linked_nodes(prev_node, insert_node)
+            self.linked_nodes(insert_node, next_node)
+            self.len += 1
     #добавить узел в середину, что и куда хотим вставить
     #левосторонняя вставка - весь список сместиться вправо и на его место встанет новый элемент. 1-станет вторым
     # в начало / конец -аппенд если выходим за границы списка / середина

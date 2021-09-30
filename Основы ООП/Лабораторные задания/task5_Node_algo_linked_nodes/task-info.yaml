@@ -11,10 +11,10 @@ files:
       offset: 628
     initialized_from_dependency: false
     selected: true
-    status: Failed
+    status: Solved
     encrypted_possible_answer: return str(self.value)
   - offset: 1363
-    length: 117
+    length: 276
     placeholder_text: '# TODO реализуйте алгоритм, который свяжет между собой узлы
       в списке'
     initial_state:
@@ -22,7 +22,7 @@ files:
       offset: 1326
     initialized_from_dependency: false
     selected: true
-    status: Failed
+    status: Solved
     encrypted_possible_answer: |-
       for i in range(len(list_nodes) - 1):
               current_node = list_nodes[i]
@@ -88,14 +88,8 @@ files:
     [Node(0, None), Node(1, None), Node(2, None), Node(3, None), Node(4, None), Node(5, None), Node(6, None), Node(7, None), Node(8, None), Node(9, None)]
     [Node(0, Node(1)), Node(1, Node(2)), Node(2, Node(3)), Node(3, Node(4)), Node(4, Node(5)), Node(5, Node(6)), Node(6, Node(7)), Node(7, Node(8)), Node(8, Node(9)), Node(9, None)]
   learner_created: false
-status: Failed
+status: Solved
 feedback:
-  message: Incorrect
-  time: Sun, 12 Sep 2021 21:26:31 UTC
-  expected: |
-    [Node(0, None), Node(1, None), Node(2, None), Node(3, None), Node(4, None), Node(5, None), Node(6, None), Node(7, None), Node(8, None), Node(9, None)]
-    [Node(0, Node(1)), Node(1, Node(2)), Node(2, Node(3)), Node(3, Node(4)), Node(4, Node(5)), Node(5, Node(6)), Node(6, Node(7)), Node(7, Node(8)), Node(8, Node(9)), Node(9, None)]
-  actual: |
-    [Node(0, None), Node(1, None), Node(2, None), Node(3, None), Node(4, None), Node(5, None), Node(6, None), Node(7, None), Node(8, None), Node(9, None)]
-    [Node(0, None), Node(1, None), Node(2, None), Node(3, None), Node(4, None), Node(5, None), Node(6, None), Node(7, None), Node(8, None), Node(9, None)]
+  message: Congratulations!
+  time: Sun, 26 Sep 2021 21:37:22 UTC
 record: -1

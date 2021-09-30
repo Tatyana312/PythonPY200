@@ -66,7 +66,10 @@ class LinkedList:
         return [linked_list_value for linked_list_value in self]
 
     def __repr__(self) -> str:
-        ...  # TODO c помощью метода to_list реализовать данный метод
+        return f"{self.__class__.__name__}({self.to_list()})"
+        # TODO c помощью метода to_list реализовать данный метод
+
+
 
 
     def __str__(self) -> str:
